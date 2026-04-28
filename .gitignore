@@ -1,0 +1,64 @@
+# ── Secrets / environment ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+frontend/.env.local
+frontend/.env*.local
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.Python
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# ── Node / Next.js (frontend) ────────────────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+frontend/coverage/
+frontend/next-env.d.ts
+
+# ── Databases & vector stores (local dev state) ──────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+chatnest.db
+qdrant_storage/
+
+# ── Editor / OS ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Cursor / misc ────────────────────────────────────────────────────────────
+.cursor/
+scratch/
+
+# ── Random binary files that shouldn't be in repo ────────────────────────────
+*.png
+!frontend/public/**/*.png
+!frontend/src/**/*.png

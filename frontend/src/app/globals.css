@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* ── Custom scrollbar (dark theme) ────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* ── Smooth scroll ────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Selection color ──────────────────────────────────────────────────────── */
+::selection {
+  background: rgb(16 185 129 / 0.3);
+  color: white;
+}
+
+/* ── Blinking cursor animation ────────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Mobile: prevent iOS Safari from zooming inputs on focus.
+   iOS auto-zooms any form field with font-size < 16px, so we bump
+   inputs and textareas up on small screens. ─────────────────────────────── */
+@media (max-width: 640px) {
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+
+/* ── Safe-area helpers for devices with a home indicator / notch. */
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+.safe-top {
+  padding-top: max(0px, env(safe-area-inset-top));
+}
+
+/* ── Dynamic viewport height — survives mobile browser chrome resizing
+   when the URL bar collapses. Fallback to 100vh for older browsers. */
+.h-dvh {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* ── Make tap targets comfortable on touch devices. */
+@media (pointer: coarse) {
+  button, [role="button"] {
+    min-height: 36px;
+  }
+}
